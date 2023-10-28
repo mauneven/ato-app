@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "posts",
+  "info": {
+    "singularName": "post",
+    "pluralName": "posts",
+    "displayName": "Post",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": true
+    },
+    "Descripcion": {
+      "type": "richtext",
+      "required": true
+    },
+    "Imagen_video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "Categoria": {
+      "type": "enumeration",
+      "enum": [
+        "Investigación",
+        "Científica",
+        "Ecología",
+        "Medio Ambiente",
+        "Entretenimiento",
+        "Historia",
+        "Educación"
+      ],
+      "required": true
+    },
+    "Tipo": {
+      "type": "enumeration",
+      "enum": [
+        "Evento",
+        "Noticia"
+      ],
+      "required": true
+    },
+    "Fecha": {
+      "type": "date"
+    },
+    "Link": {
+      "type": "text"
+    }
+  }
+}
