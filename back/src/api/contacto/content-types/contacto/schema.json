@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "contactos",
+  "info": {
+    "singularName": "contacto",
+    "pluralName": "contactos",
+    "displayName": "Contacto"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link_facebook": {
+      "type": "text"
+    },
+    "link_instagram": {
+      "type": "text"
+    },
+    "link_whatsapp": {
+      "type": "text"
+    }
+  }
+}

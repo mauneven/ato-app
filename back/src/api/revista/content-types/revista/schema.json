@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "revistas",
+  "info": {
+    "singularName": "revista",
+    "pluralName": "revistas",
+    "displayName": "revista"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre_revista": {
+      "type": "string"
+    },
+    "descripcion_revista": {
+      "type": "text"
+    },
+    "imagen_revista": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

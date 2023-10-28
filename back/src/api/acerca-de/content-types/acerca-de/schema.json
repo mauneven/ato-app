@@ -1,0 +1,57 @@
+{
+  "kind": "singleType",
+  "collectionName": "acerca_des",
+  "info": {
+    "singularName": "acerca-de",
+    "pluralName": "acerca-des",
+    "displayName": "Acerca de",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "definicion": {
+      "type": "text",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "vision": {
+      "type": "text"
+    },
+    "mision": {
+      "type": "text"
+    },
+    "que_promovemos": {
+      "type": "text"
+    },
+    "historia": {
+      "type": "text"
+    },
+    "fundadores": {
+      "type": "text"
+    },
+    "estructura_organizacional": {
+      "type": "text"
+    },
+    "comite_cientifico": {
+      "type": "text"
+    },
+    "junta_directiva": {
+      "type": "text"
+    },
+    "personals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::equipo.equipo"
+    }
+  }
+}

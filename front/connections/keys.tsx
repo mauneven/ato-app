@@ -1,0 +1,9 @@
+export const keys = {
+    EVENT_KEY: process.env.NEXT_PUBLIC_BACKEND_EVENTS_TOKEN,
+    NEWS_KEY: process.env.NEXT_PUBLIC_BACKEND_NEWS_TOKEN,
+    ARTICLE_TOKEN: process.env.NEXT_PUBLIC_BACKEND_ARTICLES_TOKEN,
+    MAGAZINE_TOKEN: process.env.NEXT_PUBLIC_BACKEND_MAGAZINES_TOKEN,
+
+};
+
+export default keys;

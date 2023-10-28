@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "salon_de_la_cattleya_trianaes",
+  "info": {
+    "singularName": "salon-de-la-cattleya-trianae",
+    "pluralName": "salon-de-la-cattleya-trianaes",
+    "displayName": "Salon de la Cattleya trianae",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Fecha_Hora": {
+      "type": "datetime"
+    },
+    "info_lugar": {
+      "type": "text"
+    },
+    "imagen_lugar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "imagen_cattleya_trianae": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

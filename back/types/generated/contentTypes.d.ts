@@ -362,46 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiPostPost extends Schema.CollectionType {
-  collectionName: 'posts';
-  info: {
-    singularName: 'post';
-    pluralName: 'posts';
-    displayName: 'Post';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Titulo: Attribute.String & Attribute.Required;
-    Descripcion: Attribute.RichText & Attribute.Required;
-    Imagen_video: Attribute.Media;
-    Categoria: Attribute.Enumeration<
-      [
-        'Investigaci\u00F3n',
-        'Cient\u00EDfica',
-        'Ecolog\u00EDa',
-        'Medio Ambiente',
-        'Entretenimiento',
-        'Historia',
-        'Educaci\u00F3n'
-      ]
-    > &
-      Attribute.Required;
-    Tipo: Attribute.Enumeration<['Evento', 'Noticia']> & Attribute.Required;
-    Fecha: Attribute.Date;
-    Link: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -717,6 +677,332 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAcercaDeAcercaDe extends Schema.SingleType {
+  collectionName: 'acerca_des';
+  info: {
+    singularName: 'acerca-de';
+    pluralName: 'acerca-des';
+    displayName: 'Acerca de';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    definicion: Attribute.Text & Attribute.Required;
+    logo: Attribute.Media;
+    vision: Attribute.Text;
+    mision: Attribute.Text;
+    que_promovemos: Attribute.Text;
+    historia: Attribute.Text;
+    fundadores: Attribute.Text;
+    estructura_organizacional: Attribute.Text;
+    comite_cientifico: Attribute.Text;
+    junta_directiva: Attribute.Text;
+    personals: Attribute.Relation<
+      'api::acerca-de.acerca-de',
+      'oneToMany',
+      'api::equipo.equipo'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::acerca-de.acerca-de',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::acerca-de.acerca-de',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiArticuloArticulo extends Schema.CollectionType {
+  collectionName: 'articulos';
+  info: {
+    singularName: 'articulo';
+    pluralName: 'articulos';
+    displayName: 'Articulo';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo_articulo: Attribute.String;
+    Descripcion_Articulo: Attribute.Text;
+    imagen_articulo: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::articulo.articulo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::articulo.articulo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiContactoContacto extends Schema.SingleType {
+  collectionName: 'contactos';
+  info: {
+    singularName: 'contacto';
+    pluralName: 'contactos';
+    displayName: 'Contacto';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    link_facebook: Attribute.Text;
+    link_instagram: Attribute.Text;
+    link_whatsapp: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contacto.contacto',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::contacto.contacto',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEquipoEquipo extends Schema.CollectionType {
+  collectionName: 'equipos';
+  info: {
+    singularName: 'equipo';
+    pluralName: 'equipos';
+    displayName: 'Personal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nombre: Attribute.String;
+    imagen: Attribute.Media;
+    titulo_cargo: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::equipo.equipo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::equipo.equipo',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventoEvento extends Schema.CollectionType {
+  collectionName: 'eventos';
+  info: {
+    singularName: 'evento';
+    pluralName: 'eventos';
+    displayName: 'Evento';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo: Attribute.String;
+    Descripcion: Attribute.Text;
+    Fecha_evento: Attribute.DateTime;
+    Link_evento: Attribute.Text;
+    imagen_evento: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::evento.evento',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::evento.evento',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMejorCattleyaTrianaeMejorCattleyaTrianae
+  extends Schema.SingleType {
+  collectionName: 'mejor_cattleya_trianaes';
+  info: {
+    singularName: 'mejor-cattleya-trianae';
+    pluralName: 'mejor-cattleya-trianaes';
+    displayName: 'Mejor Cattleya Trianae';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    info_resolucion_part1: Attribute.Text;
+    info_resolucion_part2: Attribute.Text;
+    info_medalla_part1: Attribute.Text;
+    info_medalla_part2: Attribute.Text;
+    imagen_medalla_part1: Attribute.Media;
+    imagen_medalla_part2: Attribute.Media;
+    video_medalla: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mejor-cattleya-trianae.mejor-cattleya-trianae',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mejor-cattleya-trianae.mejor-cattleya-trianae',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNoticiaNoticia extends Schema.CollectionType {
+  collectionName: 'noticias';
+  info: {
+    singularName: 'noticia';
+    pluralName: 'noticias';
+    displayName: 'Noticia';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Titulo: Attribute.String;
+    Descripcion: Attribute.Text;
+    imagen: Attribute.Media;
+    Categoria: Attribute.Enumeration<
+      [
+        'Investigaci\u00F3n',
+        'Cient\u00EDfica',
+        'Ecolog\u00EDa',
+        'Medio Ambiente',
+        'Entretenimiento',
+        'Historia',
+        'Educaci\u00F3n'
+      ]
+    >;
+    Link: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::noticia.noticia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::noticia.noticia',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRevistaRevista extends Schema.CollectionType {
+  collectionName: 'revistas';
+  info: {
+    singularName: 'revista';
+    pluralName: 'revistas';
+    displayName: 'revista';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    nombre_revista: Attribute.String;
+    descripcion_revista: Attribute.Text;
+    imagen_revista: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::revista.revista',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::revista.revista',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSalonDeLaCattleyaTrianaeSalonDeLaCattleyaTrianae
+  extends Schema.SingleType {
+  collectionName: 'salon_de_la_cattleya_trianaes';
+  info: {
+    singularName: 'salon-de-la-cattleya-trianae';
+    pluralName: 'salon-de-la-cattleya-trianaes';
+    displayName: 'Salon de la Cattleya trianae';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Fecha_Hora: Attribute.DateTime;
+    info_lugar: Attribute.Text;
+    imagen_lugar: Attribute.Media;
+    imagen_cattleya_trianae: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::salon-de-la-cattleya-trianae.salon-de-la-cattleya-trianae',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::salon-de-la-cattleya-trianae.salon-de-la-cattleya-trianae',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -727,13 +1013,21 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::post.post': ApiPostPost;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::acerca-de.acerca-de': ApiAcercaDeAcercaDe;
+      'api::articulo.articulo': ApiArticuloArticulo;
+      'api::contacto.contacto': ApiContactoContacto;
+      'api::equipo.equipo': ApiEquipoEquipo;
+      'api::evento.evento': ApiEventoEvento;
+      'api::mejor-cattleya-trianae.mejor-cattleya-trianae': ApiMejorCattleyaTrianaeMejorCattleyaTrianae;
+      'api::noticia.noticia': ApiNoticiaNoticia;
+      'api::revista.revista': ApiRevistaRevista;
+      'api::salon-de-la-cattleya-trianae.salon-de-la-cattleya-trianae': ApiSalonDeLaCattleyaTrianaeSalonDeLaCattleyaTrianae;
     }
   }
 }

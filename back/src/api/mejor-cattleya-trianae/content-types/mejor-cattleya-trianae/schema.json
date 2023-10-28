@@ -1,0 +1,48 @@
+{
+  "kind": "singleType",
+  "collectionName": "mejor_cattleya_trianaes",
+  "info": {
+    "singularName": "mejor-cattleya-trianae",
+    "pluralName": "mejor-cattleya-trianaes",
+    "displayName": "Mejor Cattleya Trianae"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "info_resolucion_part1": {
+      "type": "text"
+    },
+    "info_resolucion_part2": {
+      "type": "text"
+    },
+    "info_medalla_part1": {
+      "type": "text"
+    },
+    "info_medalla_part2": {
+      "type": "text"
+    },
+    "imagen_medalla_part1": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "imagen_medalla_part2": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "video_medalla": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
